@@ -1,0 +1,16 @@
+<launch>
+  <arg name="cloud_topic" default="/hdl_graph_slam/map_points"/>
+
+  <node pkg="octomap_server" type="octomap_server_node" name="octomap_server">
+    <param name="filter_ground" type="bool" value="false" />
+    <param name="resolution" value="1.0"/> <!-- meter -->
+    <!-- fixed map frame (set to 'map' if SLAM or localization running!) -->
+    <param name="frame_id" type="string" value="map"/>
+    <param name="base_frame_id " value="base_link" type="str"/>
+    <!-- data source to integrate (PointCloud2) - should match FLOAM output or other source -->
+    <remap from="cloud_in" to="$(arg cloud_topic)"/>
+  </node>
+
+  <node type="rviz" name="zed_rviz" pkg="rviz" args="-d $(find octomap_slice)/config/octo.rviz" />
+
+</launch>
