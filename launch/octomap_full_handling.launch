@@ -6,7 +6,7 @@
   </node>
 
   <include file="$(find octomap_slice)/launch/octomap_from_pcl.launch">
-        <arg name="cloud_topic" default="/airsim_ros_node/Copter/lidar/Lidar2"/>
+        <arg name="cloud_topic" value="$(arg cloud_topic)"/>
     </include>
 
 </launch>
