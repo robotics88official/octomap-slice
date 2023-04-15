@@ -1,9 +1,10 @@
 <launch>
   <arg name="cloud_topic" default="/hdl_graph_slam/map_points"/>
+  <arg name="octomap_res" default="1.0"/> <!-- meter -->
 
   <node pkg="octomap_server" type="octomap_server_node" name="octomap_server">
     <param name="filter_ground" type="bool" value="false" />
-    <param name="resolution" value="1.0"/> <!-- meter -->
+    <param name="resolution" value="$(arg octomap_res)"/> 
     <!-- fixed map frame (set to 'map' if SLAM or localization running!) -->
     <param name="frame_id" type="string" value="map"/>
     <param name="base_frame_id " value="base_link" type="str"/>
