@@ -16,6 +16,7 @@
   <depend>message_filters</depend>
   <depend>octomap_ros</depend>
   <depend>octomap_msgs</depend>
+  <depend>octomap_server</depend>
   <depend>roscpp</depend>
   <depend>roslib</depend>
   <depend>std_msgs</depend>

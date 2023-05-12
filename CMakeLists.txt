@@ -36,6 +36,7 @@ catkin_package(
     message_filters
     octomap_ros
     octomap_msgs
+    octomap_server
     std_msgs
     tf2
     tf2_msgs
