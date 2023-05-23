@@ -23,6 +23,7 @@ OctomapSlice::OctomapSlice(ros::NodeHandle& node)
 {
     // Set params from launch file 
     private_nh_.param<std::string>("octomap_topic", octomap_topic_, octomap_topic_);
+    private_nh_.param<float>("slice_height", slice_height_, slice_height_);
 
     slice_publisher_ = nh_.advertise<nav_msgs::OccupancyGrid>("octomap_slice", 10); // TODO expose param
 

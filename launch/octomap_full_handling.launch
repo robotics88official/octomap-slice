@@ -1,10 +1,12 @@
 <launch>
   <arg name="cloud_topic" default="/hdl_graph_slam/map_points"/>
   <arg name="octomap_res" default="1.0"/> <!-- meter -->
+  <arg name="slice_height" default="2.0"/> <!-- meter -->
   <arg name="rviz" default="true"/>
 
   <node pkg="octomap_slice" type="octomap_slice_node" name="octomap_slice" output="screen">
     <param name="octomap_topic" type="string" value="/octomap_binary" />
+    <param name="slice_height" value="$(arg slice_height)" />
   </node>
 
   <include file="$(find octomap_slice)/launch/octomap_from_pcl.launch">
