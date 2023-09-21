@@ -25,7 +25,7 @@ Author: Erin Linebarger <erin@robotics88.com>
 namespace octomapSlice {
 /**
  * @class OctomapSlice
- * @brief A class for processing octomaps for UAV navigation at fixed altitude
+ * @brief A class for processing octomaps into slices at fixed altitude
  */
 class OctomapSlice {
 
