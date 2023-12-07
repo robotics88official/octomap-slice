@@ -61,8 +61,6 @@ class OctomapSlice {
         boost::shared_ptr<Sync> sync_;
         void syncedMapCallback(const nav_msgs::OccupancyGridConstPtr &grid_msg, const octomap_msgs::OctomapConstPtr &octo_msg);
 
-        void initializeSlice();
-
     protected:
         inline unsigned mapIdx(int i, int j) const {
             return slice_map_.info.width * j + i;
