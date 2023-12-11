@@ -35,11 +35,6 @@ OctomapSlice::OctomapSlice(ros::NodeHandle& node)
 
 OctomapSlice::~OctomapSlice(){}
 
-void OctomapSlice::initializeSlice() {
-    slice_map_.header.frame_id = "map"; // TODO expose param
-    slice_initialized_ = true;
-}
-
 void OctomapSlice::syncedMapCallback(const nav_msgs::OccupancyGridConstPtr &grid_msg, const octomap_msgs::OctomapConstPtr &octo_msg) {
     nav_msgs::OccupancyGrid floor_grid = *grid_msg;
     slice_map_.header = floor_grid.header;
